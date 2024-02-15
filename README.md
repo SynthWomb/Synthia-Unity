@@ -15,7 +15,7 @@
 # Synthia-Unity
 
 <div align="center">
-<a href="" target="_blank">
+<a href="https://synthwomb-synthia.onrender.com/" target="_blank">
     <img src="https://github.com/SynthWomb/Synthia/raw/main/demo_images/synthia00-cover.png"
         alt="SynthiaGPT">
 </a>
@@ -51,7 +51,7 @@ SynthiaGPT leverages the Hugging Face Transformers library to interact with a pr
 - **play_audio.py:** Play generated audio
 
 <div align="center">
-<a href="" target="_blank">
+<a href="https://synthwomb-synthia.onrender.com/" target="_blank">
     <img src="https://github.com/SynthWomb/Synthia/raw/main/demo_images/screenshot.png"
         alt="SynthiaGPT">
 </a>
