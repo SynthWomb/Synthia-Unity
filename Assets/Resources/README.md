@@ -20,7 +20,7 @@
 </div>
 <br>
 
-SynthiaGPT leverages the Hugging Face Transformers library to interact with a pre-trained GPT-2 model. It employs TensorFlow for model management and AutoTokenizer for efficient tokenization. The script enables users to input prompts interactively, generating text responses from the GPT-2 model. To improve the user experience, unnecessary warning messages related to the transformers library are effectively suppressed.
+SynthiaGPT utilizes the Hugging Face Transformers library to seamlessly interact with a pre-trained GPT-2 model. Leveraging TensorFlow for efficient model management and AutoTokenizer for streamlined tokenization, this script empowers users to input prompts interactively and receive coherent text responses from the GPT-2 model. Additionally, the integration of the gemini library enhances the user experience by incorporating advanced generative capabilities. To ensure a smoother experience, unnecessary warning messages associated with the transformers library are effectively suppressed.
 
 ## Scripts:
 
