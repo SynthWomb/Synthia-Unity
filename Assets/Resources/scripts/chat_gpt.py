@@ -2,7 +2,7 @@ import json
 import openai
 
 # Function to load API key from a JSON file
-def load_api_key(file_path='./key.json'):
+def load_api_key(file_path='./keys.json'):
     try:
         with open(file_path, 'r') as file:
             data = json.load(file)

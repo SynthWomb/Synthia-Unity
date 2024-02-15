@@ -28,9 +28,12 @@ SynthiaGPT leverages the Hugging Face Transformers library to interact with a pr
 
 - **main.py:** The selection menu for SynthiaGPT
 - **app.py:** Run SynthiaGPT as a web-server
+- **redirect.py:** Redirect to main.py
 
 ### /scripts/
 
+- **gemini.py:** Run SynthiaGPT with Gemini
+- **gemini_t2s.py:** Run SynthiaGPT with Gemini and text-to-speech functionality
 - **transformer.py:** Run SynthiaGPT
 - **transformer_t2s.py:** Run SynthiaGPT with text-to-speech functionality
 - **transformer_s2t2s.py:** Run SynthiaGPT with speech-to-text-to-speech functionality
@@ -40,6 +43,7 @@ SynthiaGPT leverages the Hugging Face Transformers library to interact with a pr
 ### /scripts/system
 
 - **generate_text.py:** The GPT text generator
+- **greeting.py:** Greets the user
 - **clean_text.py:** Clean text from recorded voice audio
 - **stt.py:** Speech-to-text
 - **tts.py:** Text-to-speech

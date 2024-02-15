@@ -38,6 +38,16 @@ def main():
             "description": "Interact with SynthiaGPT using a webcam and mic",
             "file_name": "scripts/transformer_webcam.py"
         },
+        "6": {
+            "name": "Run 'gemini.py",
+            "description": "Interact with SynthiaGPT (using Gemini)",
+            "file_name": "scripts/gemini.py"
+        },
+        "7": {
+            "name": "Run 'gemini_t2s.py",
+            "description": "Interact with SynthiaGPT (using Gemini) with text to speech",
+            "file_name": "scripts/gemini_t2s.py"
+        },
         "00": {
             "name": "Run 'Install Dependencies'",
             "description": "Install dependencies",
