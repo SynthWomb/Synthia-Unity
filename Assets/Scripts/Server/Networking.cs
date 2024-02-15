@@ -6,9 +6,12 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class Networking : MonoBehaviour
 {
+    public GameObject UI;
     public TMPro.TMP_InputField promptInput;
     public TMPro.TMP_Text generatedText;
     public Button Submit;
+
+    private bool _serverStarted = false;
 
     string url = "http://127.0.0.1:5000/";
     int maxRetries = 3;         
@@ -16,7 +19,34 @@ public class Networking : MonoBehaviour
 
     void Start()
     {
+        UI.SetActive(false);
         generatedText.text = "";
+    }
+
+    void Update()
+    {
+        if (!_serverStarted)
+        {
+            StartCoroutine(CheckServerStatus());
+        }
+    }
+
+    IEnumerator CheckServerStatus()
+    {
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+
+            if (www.error == null)
+            {
+                UI.SetActive(true);
+                _serverStarted = true;
+            }
+            else
+            {
+                Debug.Log($"Waiting for the server to start: {www.error}");
+            }
+        }
     }
 
     public void StartWebRequest()
@@ -42,10 +72,10 @@ public class Networking : MonoBehaviour
             form.AddField("prompt", prompt);
 
             UnityWebRequest www = UnityWebRequest.Post(url + "generate", form);
-            yield return www.SendWebRequest();
+            yield return www.SendWebRequest();            
 
             if (www.result == UnityWebRequest.Result.Success)
-            {
+            {                
                 Debug.Log($"UnityWebRequest successful! Response: {www.downloadHandler.text}");
                 generatedText.text = www.downloadHandler.text;
                 break;         

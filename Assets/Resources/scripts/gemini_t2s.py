@@ -26,14 +26,36 @@ def load_api_key(file_path='./keys.json'):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-# Example usage:
-load_api_key('./keys.json')
+def main():
+    # Example usage:
+    load_api_key('./keys.json')
 
-model = genai.GenerativeModel('gemini-pro')
-prompt = input("Enter a prompt: ")
-response = model.generate_content(prompt, stream=True)
-response.resolve()  # Resolve the response to complete the iteration
+    model = genai.GenerativeModel('gemini-pro')
+    
+    while True:
+        prompt = ""
+        prompt_template = "Hi Synthia, talk as if we're having a quick and friendly chat. Here's your prompt:"
+        user_input = input(f"Enter a prompt (type 'quit' to exit): ")
 
-print(response.text)
-text_to_speech(response.text)
-#print(response.prompt_feedback)
+        prompt = prompt_template + user_input
+        response = model.generate_content(prompt, stream=True)
+        
+        if prompt.lower() == 'quit':
+            break
+
+        # Check if the user wants to exit
+        if user_input.lower() == 'quit':
+            exit()
+
+        response = model.generate_content(prompt, stream=True)
+        response.resolve()  # Resolve the response to complete the iteration
+
+        # Use response.parts instead of response.text
+        generated_text = ''.join([part.text for part in response.parts])
+
+        print(generated_text)
+        text_to_speech(generated_text)
+        # print(response.prompt_feedback)
+
+if __name__ == "__main__":
+    main()

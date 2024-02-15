@@ -1,33 +1,61 @@
-from flask import Flask, render_template, request, jsonify
-import transformers
-from transformers import TFAutoModelForCausalLM, AutoTokenizer
-import tensorflow as tf
-import logging
-from scripts.system.generate_text import generate_text
-import webbrowser
+import os
+import subprocess
+import json
 
-transformers.logging.set_verbosity_error()
-tf.get_logger().setLevel(logging.ERROR)
+def main():
+    with open('config.json') as json_file:
+        config_data = json.load(json_file)
 
-app = Flask(__name__, static_url_path='/static')
+    # Get the project name from the JSON data
+    app_name = config_data.get('Config', {}).get('AppName', 'default_app')
 
-model_name = "gpt2"
-model = TFAutoModelForCausalLM.from_pretrained(model_name)
-tokenizer = AutoTokenizer.from_pretrained(model_name, pad_token_id=50256)
+    # Print the actual app name value
+    print(app_name)
 
-@app.route('/')
-def home():
-    return render_template('index.html')
+    scripts = {
+        "1": {
+            "name": "Run 'gemini_app.py'",
+            "description": "Generate text using SynthiaGPT (Gemini)",
+            "file_name": "gemini_app.py"
+        },
+        "2": {
+            "name": "Run 'huggingface_app.py'",
+            "description": "Generate text using SynthiaGPT (Huggingface GPT2)",
+            "file_name": "huggingface_app.py"
+        },
+        "default": {
+            "name": "Redirect to Main",
+            "description": "Redirect to Main",
+            "file_name": "redirect.py"
+        }
+    }
 
-@app.route('/generate', methods=['POST'])
-def generate():
-    prompt = request.form['prompt']
-    if not prompt or len(prompt.strip()) == 0:
-        return jsonify({'generated_text': 'Invalid prompt'})
-    
-    generated_text = generate_text(prompt, model, tokenizer)
-    return jsonify({'generated_text': generated_text})  
+    current_script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    while True:
+        print("\nAvailable Scripts:")
+        for key, script_info in scripts.items():
+            print(f"{key}: {script_info['name']} - {script_info['description']}")
+        
+        user_choice = input("Enter the number of the script you want to run (or 'q' to quit): ").strip()
+        
+        if user_choice == 'q':
+            break
+        
+        if user_choice in scripts:
+            selected_script = scripts[user_choice]
+            script_file_name = selected_script["file_name"]
+            script_file_path = os.path.join(current_script_dir, script_file_name)
+            
+            if os.path.exists(script_file_path):
+                try:
+                    subprocess.run(["python", script_file_path])
+                except Exception as e:
+                    print(f"An error occurred while running the script: {e}")
+            else:
+                print(f"Script file '{script_file_name}' does not exist.")
+        else:
+            print("Invalid choice. Please select a valid script number.")
 
 if __name__ == "__main__":
-    webbrowser.open('http://127.0.0.1:5000/')
-    app.run(debug=True, use_reloader=False)
+    main()

@@ -1,6 +1,5 @@
 import pygame
 import time
-import os
 
 def play_audio(audio_path):
     pygame.mixer.init()
@@ -12,9 +11,10 @@ def play_audio(audio_path):
         while pygame.mixer.music.get_busy():
             time.sleep(1)
         pygame.mixer.music.stop()
-        play_count += 1
+        play_count += 1 
+        pygame.mixer.music.load("./system/empty.mp3")               
     
-    try:
-        os.remove(audio_path)
-    except Exception as e:
-        print(f"Error while removing file: {e}")
+   # try:
+    #    os.remove(audio_path)
+   # except Exception as e:
+   #     print(f"Error while removing file: {e}")

@@ -10,7 +10,7 @@
 </div>
 <br>
 
-# SynthiaGPT
+# Synthia
 
 <div align="center">
 <a href="" target="_blank">
@@ -71,6 +71,7 @@ pydub==0.25.1
 beautifulsoup4==4.10.0
 SpeechRecognition==3.10.1
 pygame==2.5.2
+google-generativeai==0.3.2
 ```
 ## How to Run:
 ```bash

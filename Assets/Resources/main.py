@@ -15,7 +15,7 @@ def main():
     scripts = {
         "1": {
             "name": "Run 'transformer.py'",
-            "description": "Generate text using Cursed GPT",
+            "description": "Generate text using SynthiaGPT",
             "file_name": "scripts/transformer.py"
         },
         "2": {

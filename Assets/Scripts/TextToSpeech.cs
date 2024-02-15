@@ -33,7 +33,6 @@ public class TextToSpeech : MonoBehaviour
 
         if (www.result == UnityWebRequest.Result.Success)
         {
-            // Handle the TTS audio data (www.downloadHandler.data)
         }
         else
         {
