@@ -15,7 +15,7 @@
 # Synthia-Unity
 
 <div align="center">
-<a href="https://synthwomb-synthia.onrender.com/" target="_blank">
+<a href="https://github.com/SynthWomb" target="_blank">
     <img src="https://github.com/SynthWomb/Synthia/raw/main/demo_images/synthia00-cover.png"
         alt="SynthiaGPT">
 </a>
@@ -23,7 +23,7 @@
 <br>
 <br>
 <div align="center">
-<a href="https://github.com/SynthWomb" target="_blank" align="center">
+<a href="https://synthwomb-synthia.onrender.com/" target="_blank" align="center">
     <img src="https://github.com/SynthWomb/Synthia/blob/main/demo_images/synthia_qr.jpg"
         alt="SynthWomb" style="width:200px;"/>
 </a>
