@@ -33,7 +33,7 @@ public class Networking : MonoBehaviour
 
     IEnumerator CheckServerStatus()
     {
-        using (WWW www = new WWW(url))
+        using (UnityWebRequest www = new UnityWebRequest(url))
         {
             yield return www;
 

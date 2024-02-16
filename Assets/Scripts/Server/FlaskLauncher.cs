@@ -2,6 +2,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Threading;
 using UnityEngine;
+using System;
 
 [DisallowMultipleComponent]
 public class FlaskLauncher : MonoBehaviour
@@ -10,8 +11,13 @@ public class FlaskLauncher : MonoBehaviour
 
     public static bool useGemini = true;
 
-    void Start()
+    void Awake()
     {
+        KillPythonProcesses();
+    }
+
+    void Start()
+    {        
         Application.quitting += OnApplicationQuit;
     }
 
@@ -20,7 +26,9 @@ public class FlaskLauncher : MonoBehaviour
         if (flaskProcess != null && !flaskProcess.HasExited)
         {
             flaskProcess.Kill();
+            flaskProcess.Dispose();
         }
+        KillPythonProcesses();
     }
 
     public static void LaunchFlask()
@@ -29,7 +37,23 @@ public class FlaskLauncher : MonoBehaviour
 
         Thread thread = new Thread(() => RunFlaskProcess(dataPath));
         thread.IsBackground = true;
-        thread.Start();
+        thread.Start();        
+    }
+
+    static void KillPythonProcesses()
+    {
+        Process[] processes = Process.GetProcessesByName("python");
+        foreach (var process in processes)
+        {
+            try
+            {
+                process.Kill();
+            }
+            catch (Exception ex)
+            {
+                UnityEngine.Debug.LogError($"Failed to kill Python process: {ex.Message}");
+            }
+        }
     }
 
     static void RunFlaskProcess(string dataPath)
@@ -65,9 +89,6 @@ public class FlaskLauncher : MonoBehaviour
 
         flaskProcess.StandardInput.WriteLine($"cd /D {Path.GetDirectoryName(scriptPath)}");
         flaskProcess.StandardInput.WriteLine($"python {Path.GetFileName(scriptPath)}");
-
-        flaskProcess.StandardInput.Close();
-        flaskProcess.WaitForExit();
     }
 }
 
