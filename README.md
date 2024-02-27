@@ -57,7 +57,7 @@ SynthiaGPT leverages Google's Gemini & the Hugging Face Transformers library to 
 - **tts.py:** Text-to-speech
 - **capture_photo.py:** Capture photo with a webcam
 - **play_audio.py:** Play generated audio
-
+<br>
 <div align="center">
 <a href="https://synthwomb-synthia.onrender.com/" target="_blank">
     <img src="https://github.com/SynthWomb/Synthia/raw/main/demo_images/screenshot.png"
