@@ -5,11 +5,21 @@
   <img alt="Python" src="https://img.shields.io/badge/python%20-%231F5B94.svg?&style=for-the-badge&logo=python&logoColor=white"/>
     <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%231F5B94.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
   <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231F5B94.svg?&style=for-the-badge&logo=css3&logoColor=white"/> 
+    <img alt="C#" src="https://img.shields.io/badge/C%23-%231F5B94.svg?&style=for-the-badge&logo=csharp&logoColor=white"/> 
+  <img alt="JSON" src="https://img.shields.io/badge/JSON-%231F5B94.svg?&style=for-the-badge&logo=json&logoColor=white"/>
+   <img alt="HLSL" src="https://img.shields.io/badge/HLSL-%231F5B94.svg?&style=for-the-badge&logo=microsoft&logoColor=white"/>
+  <img alt="ShaderLab" src="https://img.shields.io/badge/ShaderLab-%231F5B94.svg?&style=for-the-badge&logo=unity&logoColor=white"/>
 </div>
 <div align="center">
     <img alt="TensorFlow" src="https://img.shields.io/badge/tensorflow%20-%231F5B94.svg?&style=for-the-badge&logo=tensorflow&logoColor=white"/>
     <img alt="Flask" src="https://img.shields.io/badge/flask%20-%231F5B94.svg?&style=for-the-badge&logo=flask&logoColor=white"/>
 </div>
+
+<div align="center">
+  <img alt="PowerShell" src="https://img.shields.io/badge/PowerShell-%231F5B94.svg?&style=for-the-badge&logo=powershell&logoColor=white"/>
+  <img alt="Shell" src="https://img.shields.io/badge/Shell-%231F5B94.svg?&style=for-the-badge&logo=gnu-bash&logoColor=white"/>
+  <img alt="Batch" src="https://img.shields.io/badge/Batch-%231F5B94.svg?&style=for-the-badge&logo=windows&logoColor=white"/>
+  </div>
 <br>
 
 # Synthia-Unity
