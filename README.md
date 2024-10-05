@@ -2,13 +2,11 @@
   <img alt="Unity" src="https://img.shields.io/badge/unity%20-%231F5B94.svg?&style=for-the-badge&logo=unity&logoColor=white"/>
 </div>
 <div align="center">
-  <img alt="Python" src="https://img.shields.io/badge/python%20-%231F5B94.svg?&style=for-the-badge&logo=python&logoColor=white"/>
-    <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%231F5B94.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
-  <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231F5B94.svg?&style=for-the-badge&logo=css3&logoColor=white"/> 
     <img alt="C#" src="https://img.shields.io/badge/C%23-%231F5B94.svg?&style=for-the-badge&logo=csharp&logoColor=white"/> 
   <img alt="JSON" src="https://img.shields.io/badge/JSON-%231F5B94.svg?&style=for-the-badge&logo=json&logoColor=white"/>
-   <img alt="HLSL" src="https://img.shields.io/badge/HLSL-%231F5B94.svg?&style=for-the-badge&logo=microsoft&logoColor=white"/>
-  <img alt="ShaderLab" src="https://img.shields.io/badge/ShaderLab-%231F5B94.svg?&style=for-the-badge&logo=unity&logoColor=white"/>
+    <img alt="Python" src="https://img.shields.io/badge/python%20-%231F5B94.svg?&style=for-the-badge&logo=python&logoColor=white"/>
+    <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%231F5B94.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
+  <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231F5B94.svg?&style=for-the-badge&logo=css3&logoColor=white"/> 
 </div>
 <div align="center">
     <img alt="TensorFlow" src="https://img.shields.io/badge/tensorflow%20-%231F5B94.svg?&style=for-the-badge&logo=tensorflow&logoColor=white"/>
